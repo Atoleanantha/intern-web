@@ -1,0 +1,104 @@
+
+.nav{
+  background-color: #fff; 
+}
+.nav-item{
+  color: black;
+  
+}
+.nav-item :hover{
+  color: purple;
+  text-decoration: underline;
+  font-weight: bold;
+  text-decoration-color: purple;
+  font-size: large;
+}
+
+.carosuel{
+  background-image: url('./assets/background.jpg');
+  height: 600px;
+}
+
+bg-img{
+  width: fit-content;
+  height: 600px;
+
+}
+
+.para1 {
+  text-align: start;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left:12%;
+  padding-right:18% ;
+
+}
+.para1 p{
+  font-size: 20px;
+}
+.para2{
+  background-color: rgb(231, 237, 240);
+
+}
+
+.para2 h1{
+  color: rgb(67, 168, 168);
+  text-align: center;
+  text-decoration-line: underline;
+  padding-bottom: 1em;
+}
+.row{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.row img{
+  padding-top: 5%;
+  padding-right: 5%;
+  height: 100%;
+  width: 100%;
+}
+.column{
+  display: flex; /* This sets up a flex container */
+  flex-direction: column; /* Aligns the items in a column */
+  
+}
+
+
+.column {
+  flex: 1; /* This allows the column to take up remaining available space */
+  padding: 0 20px; /* Optional: Adjust padding for spacing */
+}
+
+.custombtn:hover{
+  border-radius:20px;
+  width:120px;
+  align-content: center;
+  border-radius: 20px;
+  border: rgb(38, 16, 38) solid 1px ;
+ 
+}
+
+img{
+  border-radius: 5em;
+}
+
+/* Css of form contact us */
+.contactUs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; 
+}
+
+form {
+  margin: 20px;
+  width: 100%; 
+}
+
+.socialMedia{
+  margin-top: 2em;
+
+  text-align: center;
+ 
+}
