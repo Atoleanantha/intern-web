@@ -84,7 +84,7 @@ function Gallery() {
         errorMessage!==""?<center>{errorMessage}</center>:
         images.length==0?"No images": 
         images.map((item, index) => (
-          <Col xs={2} md={2} sm={3} className="m-1">
+          <Col xs={6} md={3} sm={4} className="">
             <div key={index} className="wrapper-images">
               <img
                 src={item.photo}
