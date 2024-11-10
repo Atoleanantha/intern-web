@@ -1,43 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../App.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Logo from './logo1.jpg';
+import Navbar from 'react-bootstrap/Navbar';
+import Logo from './logo.png';
+import { Link } from 'react-router-dom'
 
-const navbar = () => {
+
+const NavBar = () => {
+  const [expanded, setExpanded] = useState(false); // To track navbar state (expanded or collapsed)
+
+  // Function to handle navbar toggle
+  const handleToggle = () => setExpanded(!expanded);
+
+  // Function to close navbar when a link is clicked
+  const handleClose = () => setExpanded(false);
+
   return (
-    <Navbar expand="lg" className="nav">
-    <Container>
-      <Navbar.Brand href="#home"><img style={{height:'60px'}} src={Logo} alt='Logo'></img></Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto ">
-          <Nav.Link className='nav-item' href="#home">Home</Nav.Link>
-          <NavDropdown className='nav-item' title="Services" id="basic-nav-dropdown">
-            <NavDropdown.Item className='nav-item'  href="#action/3.1">Web Developement</NavDropdown.Item>
-            <NavDropdown.Item className='nav-item' href="#action/3.2">
-              Mobile App Developement
-            </NavDropdown.Item>
-            <NavDropdown.Item className='nav-item'  href="#action/3.3">Flutter Developement</NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link className='nav-item'  href="#link">Products</Nav.Link>
-          <Nav.Link className='nav-item'  href="#link">Internships</Nav.Link>
-          <NavDropdown className='nav-item' title="Jobs" id="basic-nav-dropdown">
-            <NavDropdown.Item className='nav-item' href="#action/3.1">Campus Ambassador</NavDropdown.Item>
-            <NavDropdown.Item className='nav-item'  href="#action/3.2">
-              Promotion Executive
-            </NavDropdown.Item>
-        </NavDropdown>
-        <Nav.Link className='nav-item'  href="#link">Verification</Nav.Link>
-        <Nav.Link className='nav-item'  href="#link">About Us</Nav.Link>
-        <Nav.Link  href="#link">Contact Us</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
-  )
-}
+    <Navbar expand="lg" className="nav" expanded={expanded} onToggle={handleToggle} style={{ backgroundColor: "#e1e8f2", borderBottom: "0.5px solid", borderColor: "#222e42" }}>
+      <Container>
+        {/* Logo on the left */}
+        <Navbar.Brand>
+          <Link to='/' onClick={handleClose}>
+            <img style={{ height: '3em' }} src={Logo} alt='Logo' />
+          </Link>
+        </Navbar.Brand>
 
-export default navbar
+        {/* Toggle for small screens */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
+
+        {/* Navigation Links */}
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link className='nav-item'>
+              <Link to='/' style={{ color: 'black', textDecoration: 'none' }} onClick={handleClose}>Home</Link>
+            </Nav.Link>
+
+            <Nav.Link className='nav-item'>
+              <Link to='/internships' style={{ color: 'black', textDecoration: 'none' }} onClick={handleClose}>Courses</Link>
+            </Nav.Link>
+
+            {/* <Nav.Link className='nav-item'>
+              <Link to='/career' style={{ color: 'black', textDecoration: 'none' }} onClick={handleClose}>Career</Link>
+            </Nav.Link> */}
+
+            <NavDropdown className='nav-item ' title="Student Corner" id="basic-nav-dropdown">
+              <NavDropdown.Item className='nav-item'><Link to='/placements' className='nav-item' style={{ color: 'black', textDecoration: 'none' }} onClick={handleClose}>Placements</Link></NavDropdown.Item>
+              <NavDropdown.Item className='nav-item' ><Link to='/testimonials' style={{ color: 'black', textDecoration: 'none' }}>Testimonial</Link></NavDropdown.Item>
+              {/* <NavDropdown.Item className='nav-item'  ><Link to='/web-services' style={{ color: 'black', textDecoration: 'none' }}>Flutter Developement</Link></NavDropdown.Item> */}
+            </NavDropdown>
+
+
+            <Nav.Link className='nav-item'>
+              <Link to='/gallary' style={{ color: 'black', textDecoration: 'none' }} onClick={handleClose}>Gallary</Link>
+            </Nav.Link>
+            <Nav.Link className='nav-item'>
+              <Link to='/about' style={{ color: 'black', textDecoration: 'none' }} onClick={handleClose}>About Us</Link>
+            </Nav.Link>
+
+            <Nav.Link className='nav-item'>
+              <Link to='/contact' style={{ color: 'black', textDecoration: 'none' }} onClick={handleClose}>Contact Us</Link>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
+export default NavBar
