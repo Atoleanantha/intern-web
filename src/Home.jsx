@@ -49,8 +49,6 @@ const Home = () => {
 
        
 
-        {/* Contact us form  */}
-          {/* <ContactUs/> */}
       
     </>
   )

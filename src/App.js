@@ -30,6 +30,7 @@ function App() {
     
   }, []);
 
+  
   const fetchPopups = async () => {
     setLoading(true);
     try {

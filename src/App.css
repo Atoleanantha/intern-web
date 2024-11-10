@@ -173,3 +173,15 @@ form {
   z-index: 999;
 }
 
+.btn-orange {
+  background-color: orange;
+  border-color: orange;
+  color: white;
+}
+
+.btn-orange:hover {
+  background-color: darkorange;
+  border-color: darkorange;
+}
+
+

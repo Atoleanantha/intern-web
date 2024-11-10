@@ -7,6 +7,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from './logo.png';
 import { Link } from 'react-router-dom'
+import { NavItem } from 'react-bootstrap';
+import ContactModal from '../ContactModal';
 
 
 const NavBar = () => {
@@ -63,6 +65,9 @@ const NavBar = () => {
             <Nav.Link className='nav-item'>
               <Link to='/contact' style={{ color: 'black', textDecoration: 'none' }} onClick={handleClose}>Contact Us</Link>
             </Nav.Link>
+            <NavItem>
+              <ContactModal/>
+            </NavItem>
           </Nav>
         </Navbar.Collapse>
       </Container>
