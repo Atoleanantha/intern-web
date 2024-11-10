@@ -13,7 +13,6 @@ const Achivements = () => {
 
   const [clickedImg, setClickedImg] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null);
-
   useEffect(() => {
     fetchPlacements();
   }, []);
